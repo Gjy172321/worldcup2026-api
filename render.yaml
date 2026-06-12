@@ -1,0 +1,24 @@
+# Render.com 部署配置
+services:
+  - type: web
+    name: worldcup2026-api
+    env: node
+    region: singapore
+    plan: free
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "3456"
+      - key: DATABASE_URL
+        sync: false
+      - key: WECHAT_APPID
+        sync: false
+      - key: WECHAT_SECRET
+        sync: false
+      - key: API_FOOTBALL_KEY
+        sync: false
+      - key: LOG_LEVEL
+        value: info
